@@ -21,10 +21,6 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		32D337371F6DBDB20030C185 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 32D337361F6DBDB20030C185 /* libz.tbd */; };
-		32D337391F6DBDC40030C185 /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 32D337381F6DBDC40030C185 /* libbz2.tbd */; };
-		32D3373B1F6DBDD50030C185 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 32D3373A1F6DBDD50030C185 /* libiconv.tbd */; };
-		32D3373D1F6DC16E0030C185 /* SGFFStub.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D3373C1F6DC16E0030C185 /* SGFFStub.m */; };
 		9C41E5E81E975631006E5A65 /* avcodec.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C41E57C1E975631006E5A65 /* avcodec.h */; };
 		9C41E5E91E975631006E5A65 /* avcodec.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C41E57C1E975631006E5A65 /* avcodec.h */; };
 		9C41E5EA1E975631006E5A65 /* avcodec.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C41E57C1E975631006E5A65 /* avcodec.h */; };
@@ -334,6 +330,14 @@
 		9C41E71A1E975631006E5A65 /* version.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C41E5E71E975631006E5A65 /* version.h */; };
 		9C41E71B1E975631006E5A65 /* version.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C41E5E71E975631006E5A65 /* version.h */; };
 		9C41E71C1E975631006E5A65 /* version.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C41E5E71E975631006E5A65 /* version.h */; };
+		9C41E71D1E97569F006E5A65 /* libavcodec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C4793431E71402E00AD4289 /* libavcodec.a */; };
+		9C41E71E1E97569F006E5A65 /* libavfilter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C4793451E71402E00AD4289 /* libavfilter.a */; };
+		9C41E71F1E97569F006E5A65 /* libavformat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C4793461E71402E00AD4289 /* libavformat.a */; };
+		9C41E7201E97569F006E5A65 /* libavutil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C4793471E71402E00AD4289 /* libavutil.a */; };
+		9C41E7211E97569F006E5A65 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C4793481E71402E00AD4289 /* libcrypto.a */; };
+		9C41E7221E97569F006E5A65 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C4793491E71402E00AD4289 /* libssl.a */; };
+		9C41E7231E97569F006E5A65 /* libswresample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C47934A1E71402E00AD4289 /* libswresample.a */; };
+		9C41E7241E97569F006E5A65 /* libswscale.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C47934B1E71402E00AD4289 /* libswscale.a */; };
 		9C41E7251E9756A6006E5A65 /* libavcodec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C4793551E71403500AD4289 /* libavcodec.a */; };
 		9C41E7261E9756A6006E5A65 /* libavfilter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C4793571E71403500AD4289 /* libavfilter.a */; };
 		9C41E7271E9756A6006E5A65 /* libavformat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C4793581E71403500AD4289 /* libavformat.a */; };
@@ -651,10 +655,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		32D337361F6DBDB20030C185 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.0.sdk/usr/lib/libz.tbd; sourceTree = DEVELOPER_DIR; };
-		32D337381F6DBDC40030C185 /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.0.sdk/usr/lib/libbz2.tbd; sourceTree = DEVELOPER_DIR; };
-		32D3373A1F6DBDD50030C185 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.0.sdk/usr/lib/libiconv.tbd; sourceTree = DEVELOPER_DIR; };
-		32D3373C1F6DC16E0030C185 /* SGFFStub.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SGFFStub.m; sourceTree = "<group>"; };
 		9C0912361E71283100E5AA46 /* SGPlatform.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SGPlatform.xcodeproj; path = Vendors/SGPlatform/SGPlatform.xcodeproj; sourceTree = "<group>"; };
 		9C41E57C1E975631006E5A65 /* avcodec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = avcodec.h; sourceTree = "<group>"; };
 		9C41E57D1E975631006E5A65 /* avdct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = avdct.h; sourceTree = "<group>"; };
@@ -885,10 +885,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32D3373B1F6DBDD50030C185 /* libiconv.tbd in Frameworks */,
-				32D337391F6DBDC40030C185 /* libbz2.tbd in Frameworks */,
-				32D337371F6DBDB20030C185 /* libz.tbd in Frameworks */,
 				9C816A281E8755E4007ED41B /* SGPlatform.framework in Frameworks */,
+				9C41E71D1E97569F006E5A65 /* libavcodec.a in Frameworks */,
+				9C41E71E1E97569F006E5A65 /* libavfilter.a in Frameworks */,
+				9C41E71F1E97569F006E5A65 /* libavformat.a in Frameworks */,
+				9C41E7201E97569F006E5A65 /* libavutil.a in Frameworks */,
+				9C41E7211E97569F006E5A65 /* libcrypto.a in Frameworks */,
+				9C41E7221E97569F006E5A65 /* libssl.a in Frameworks */,
+				9C41E7231E97569F006E5A65 /* libswresample.a in Frameworks */,
+				9C41E7241E97569F006E5A65 /* libswscale.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1135,7 +1140,6 @@
 				9C478F3A1E713AA800AD4289 /* SGPlayer+DisplayView.m */,
 				9C478F3B1E713AA800AD4289 /* SGYUVTools.h */,
 				9C478F3C1E713AA800AD4289 /* SGYUVTools.m */,
-				32D3373C1F6DC16E0030C185 /* SGFFStub.m */,
 			);
 			path = SGTools;
 			sourceTree = "<group>";
@@ -1306,9 +1310,6 @@
 		9C4793421E71402E00AD4289 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				32D3373A1F6DBDD50030C185 /* libiconv.tbd */,
-				32D337381F6DBDC40030C185 /* libbz2.tbd */,
-				32D337361F6DBDB20030C185 /* libz.tbd */,
 				9C4793671E71404A00AD4289 /* libavcodec.a */,
 				9C4793681E71404A00AD4289 /* libavdevice.a */,
 				9C4793691E71404A00AD4289 /* libavfilter.a */,
@@ -2040,7 +2041,6 @@
 				9C4792B71E713B2700AD4289 /* SGFFVideoToolBox.m in Sources */,
 				9C47927A1E713B1000AD4289 /* SGFFFrame.m in Sources */,
 				9C4792681E713B1000AD4289 /* SGFFAudioFrame.m in Sources */,
-				32D3373D1F6DC16E0030C185 /* SGFFStub.m in Sources */,
 				9C478F661E713AC600AD4289 /* SGSensors.m in Sources */,
 				9C478F141E713A3200AD4289 /* SGPlayerTrack.m in Sources */,
 				9C478F491E713AA800AD4289 /* SGPlayer+DisplayView.m in Sources */,
@@ -2301,7 +2301,7 @@
 					"\"$(SRCROOT)/SGPlayer/Classes/Core/SGFFPlayer/ffmpeg/lib-iOS\"",
 					"$(PROJECT_DIR)/SGPlayer/Classes/Core/SGFFPlayer/ffmpeg/lib-iOS",
 				);
-				MACH_O_TYPE = mh_dylib;
+				MACH_O_TYPE = staticlib;
 				PRODUCT_BUNDLE_IDENTIFIER = com.libobjc.SGPlayer;
 				PRODUCT_NAME = SGPlayer;
 				SDKROOT = iphoneos;
@@ -2329,7 +2329,7 @@
 					"\"$(SRCROOT)/SGPlayer/Classes/Core/SGFFPlayer/ffmpeg/lib-iOS\"",
 					"$(PROJECT_DIR)/SGPlayer/Classes/Core/SGFFPlayer/ffmpeg/lib-iOS",
 				);
-				MACH_O_TYPE = mh_dylib;
+				MACH_O_TYPE = staticlib;
 				PRODUCT_BUNDLE_IDENTIFIER = com.libobjc.SGPlayer;
 				PRODUCT_NAME = SGPlayer;
 				SDKROOT = iphoneos;
