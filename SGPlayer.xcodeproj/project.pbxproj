@@ -6,6 +6,20 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		32D3373E1F6DC47F0030C185 /* SGPlayer-Universal */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 32D3373F1F6DC47F0030C185 /* Build configuration list for PBXAggregateTarget "SGPlayer-Universal" */;
+			buildPhases = (
+				32D337421F6DC4850030C185 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = "SGPlayer-Universal";
+			productName = "SGPlayer-Universal";
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		32D337371F6DBDB20030C185 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 32D337361F6DBDB20030C185 /* libz.tbd */; };
 		32D337391F6DBDC40030C185 /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 32D337381F6DBDC40030C185 /* libbz2.tbd */; };
@@ -1886,6 +1900,10 @@
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = single;
 				TargetAttributes = {
+					32D3373E1F6DC47F0030C185 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
 					9CEFA6D51E7122BF00835CAB = {
 						CreatedOnToolsVersion = 8.2.1;
 						ProvisioningStyle = Automatic;
@@ -1919,6 +1937,7 @@
 				9CEFA6D51E7122BF00835CAB /* SGPlayer iOS */,
 				9CEFA6E11E7125C800835CAB /* SGPlayer macOS */,
 				9CEFA6EC1E7125CC00835CAB /* SGPlayer tvOS */,
+				32D3373E1F6DC47F0030C185 /* SGPlayer-Universal */,
 			);
 		};
 /* End PBXProject section */
@@ -1970,6 +1989,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		32D337421F6DC4850030C185 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "######################\n# Options\n######################\n\nREVEAL_ARCHIVE_IN_FINDER=false\n\nFRAMEWORK_NAME=\"${PROJECT_NAME}\"\n######################\n# Options\n######################\n\nREVEAL_ARCHIVE_IN_FINDER=false\n\nFRAMEWORK_NAME=\"${PROJECT_NAME}\"\n\nSIMULATOR_LIBRARY_PATH=\"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${FRAMEWORK_NAME}.framework\"\n\nDEVICE_LIBRARY_PATH=\"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${FRAMEWORK_NAME}.framework\"\n\nUNIVERSAL_LIBRARY_DIR=\"${BUILD_DIR}/${CONFIGURATION}-iphoneuniversal\"\n\nFRAMEWORK=\"${UNIVERSAL_LIBRARY_DIR}/${FRAMEWORK_NAME}.framework\"\n\n\n######################\n# Build Frameworks\n######################\n\nxcodebuild -workspace ${PROJECT_NAME}.xcworkspace -scheme ${PROJECT_NAME} -sdk iphonesimulator -configuration ${CONFIGURATION} clean build CONFIGURATION_BUILD_DIR=${BUILD_DIR}/${CONFIGURATION}-iphonesimulator 2>&1\n\nxcodebuild -workspace ${PROJECT_NAME}.xcworkspace -scheme ${PROJECT_NAME} -sdk iphoneos -configuration ${CONFIGURATION} clean build CONFIGURATION_BUILD_DIR=${BUILD_DIR}/${CONFIGURATION}-iphoneos 2>&1\n\n######################\n# Create directory for universal\n######################\n\nrm -rf \"${UNIVERSAL_LIBRARY_DIR}\"\n\nmkdir \"${UNIVERSAL_LIBRARY_DIR}\"\n\nmkdir \"${FRAMEWORK}\"\n\n\n######################\n# Copy files Framework\n######################\n\ncp -r \"${DEVICE_LIBRARY_PATH}/.\" \"${FRAMEWORK}\"\n\n\n######################\n# Make an universal binary\n######################\n\ncp -r `dirname \"${DEVICE_LIBRARY_PATH}/${FRAMEWORK_NAME}\"`.dSYM `dirname \"${FRAMEWORK}/${FRAMEWORK_NAME}\"`.dSYM\n\nlipo \"${SIMULATOR_LIBRARY_PATH}/${FRAMEWORK_NAME}\" \"${DEVICE_LIBRARY_PATH}/${FRAMEWORK_NAME}\" -create -output \"${FRAMEWORK}/${FRAMEWORK_NAME}\" | echo\n\n# For Swift framework, Swiftmodule needs to be copied in the universal framework\nif [ -d \"${SIMULATOR_LIBRARY_PATH}/Modules/${FRAMEWORK_NAME}.swiftmodule/\" ]; then\n    cp -f ${SIMULATOR_LIBRARY_PATH}/Modules/${FRAMEWORK_NAME}.swiftmodule/* \"${FRAMEWORK}/Modules/${FRAMEWORK_NAME}.swiftmodule/\" | echo\nfi\n\nif [ -d \"${DEVICE_LIBRARY_PATH}/Modules/${FRAMEWORK_NAME}.swiftmodule/\" ]; then\n    cp -f ${DEVICE_LIBRARY_PATH}/Modules/${FRAMEWORK_NAME}.swiftmodule/* \"${FRAMEWORK}/Modules/${FRAMEWORK_NAME}.swiftmodule/\" | echo\nfi\n\n######################\n# On Release, copy the result to release directory\n######################\nOUTPUT_DIR=\"${PROJECT_DIR}/Output/${FRAMEWORK_NAME}-${CONFIGURATION}-iphoneuniversal/\"\n\nrm -rf \"$OUTPUT_DIR\"\nmkdir -p \"$OUTPUT_DIR\"\n\ncp -r \"${FRAMEWORK}\" \"${FRAMEWORK}\".dSYM \"$OUTPUT_DIR\"\n\nif [ ${REVEAL_ARCHIVE_IN_FINDER} = true ]; then\n    open \"${OUTPUT_DIR}/\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9CEFA6D11E7122BF00835CAB /* Sources */ = {
@@ -2137,6 +2172,22 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		32D337401F6DC47F0030C185 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		32D337411F6DC47F0030C185 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		9CEFA6DC1E7122BF00835CAB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -2405,6 +2456,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		32D3373F1F6DC47F0030C185 /* Build configuration list for PBXAggregateTarget "SGPlayer-Universal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				32D337401F6DC47F0030C185 /* Debug */,
+				32D337411F6DC47F0030C185 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		9CEFA6D01E7122BF00835CAB /* Build configuration list for PBXProject "SGPlayer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
