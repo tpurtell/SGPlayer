@@ -21,6 +21,9 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		32D3374D1F6DCD8D0030C185 /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 32D3374C1F6DCD8D0030C185 /* libbz2.tbd */; };
+		32D3374F1F6DCD920030C185 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 32D3374E1F6DCD920030C185 /* libz.tbd */; };
+		32D337511F6DCDA10030C185 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 32D337501F6DCDA10030C185 /* libiconv.tbd */; };
 		9C41E5E81E975631006E5A65 /* avcodec.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C41E57C1E975631006E5A65 /* avcodec.h */; };
 		9C41E5E91E975631006E5A65 /* avcodec.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C41E57C1E975631006E5A65 /* avcodec.h */; };
 		9C41E5EA1E975631006E5A65 /* avcodec.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C41E57C1E975631006E5A65 /* avcodec.h */; };
@@ -655,6 +658,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		32D3374C1F6DCD8D0030C185 /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.0.sdk/usr/lib/libbz2.tbd; sourceTree = DEVELOPER_DIR; };
+		32D3374E1F6DCD920030C185 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.0.sdk/usr/lib/libz.tbd; sourceTree = DEVELOPER_DIR; };
+		32D337501F6DCDA10030C185 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.0.sdk/usr/lib/libiconv.tbd; sourceTree = DEVELOPER_DIR; };
 		9C0912361E71283100E5AA46 /* SGPlatform.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SGPlatform.xcodeproj; path = Vendors/SGPlatform/SGPlatform.xcodeproj; sourceTree = "<group>"; };
 		9C41E57C1E975631006E5A65 /* avcodec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = avcodec.h; sourceTree = "<group>"; };
 		9C41E57D1E975631006E5A65 /* avdct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = avdct.h; sourceTree = "<group>"; };
@@ -885,6 +891,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32D337511F6DCDA10030C185 /* libiconv.tbd in Frameworks */,
+				32D3374F1F6DCD920030C185 /* libz.tbd in Frameworks */,
+				32D3374D1F6DCD8D0030C185 /* libbz2.tbd in Frameworks */,
 				9C816A281E8755E4007ED41B /* SGPlatform.framework in Frameworks */,
 				9C41E71D1E97569F006E5A65 /* libavcodec.a in Frameworks */,
 				9C41E71E1E97569F006E5A65 /* libavfilter.a in Frameworks */,
@@ -1310,6 +1319,9 @@
 		9C4793421E71402E00AD4289 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				32D337501F6DCDA10030C185 /* libiconv.tbd */,
+				32D3374E1F6DCD920030C185 /* libz.tbd */,
+				32D3374C1F6DCD8D0030C185 /* libbz2.tbd */,
 				9C4793671E71404A00AD4289 /* libavcodec.a */,
 				9C4793681E71404A00AD4289 /* libavdevice.a */,
 				9C4793691E71404A00AD4289 /* libavfilter.a */,
@@ -2301,7 +2313,7 @@
 					"\"$(SRCROOT)/SGPlayer/Classes/Core/SGFFPlayer/ffmpeg/lib-iOS\"",
 					"$(PROJECT_DIR)/SGPlayer/Classes/Core/SGFFPlayer/ffmpeg/lib-iOS",
 				);
-				MACH_O_TYPE = staticlib;
+				MACH_O_TYPE = mh_dylib;
 				PRODUCT_BUNDLE_IDENTIFIER = com.libobjc.SGPlayer;
 				PRODUCT_NAME = SGPlayer;
 				SDKROOT = iphoneos;
@@ -2329,7 +2341,7 @@
 					"\"$(SRCROOT)/SGPlayer/Classes/Core/SGFFPlayer/ffmpeg/lib-iOS\"",
 					"$(PROJECT_DIR)/SGPlayer/Classes/Core/SGFFPlayer/ffmpeg/lib-iOS",
 				);
-				MACH_O_TYPE = staticlib;
+				MACH_O_TYPE = mh_dylib;
 				PRODUCT_BUNDLE_IDENTIFIER = com.libobjc.SGPlayer;
 				PRODUCT_NAME = SGPlayer;
 				SDKROOT = iphoneos;
